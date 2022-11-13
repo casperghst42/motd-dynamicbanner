@@ -1,5 +1,6 @@
 # motd-dynamicbanner
 Message of the Day dynamic banner. 
+Feel free to clone and improve. Especially the 10-sysinfo could use some love.
 
 Most of this comes form:
 - https://chrisrmiller.com/ubuntu-dynamic-motd-on-debian-9/
@@ -53,15 +54,59 @@ sudo apt install lsb-release figlet
 |_| |_|\___|_|_|\___/     \_/\_/ \___/|_|  |_|\__,_|
 ```
 
-#### 2. create the directory
+#### 2. do the directory and files
+Create the directory.
 ```
 sudo mkdir /etc/update-motd.d
-cd /etc/update-motd.d
-sudo touch 00-header && sudo touch 10-sysinfo && sudo touch 90-footer
+```
+Get the files:
+``` 
+cd <>
+git clone https://github.com/casperghst42/motd-dynamicbanner.git
+cd motd-dynamicbanner/files
+cp * /etc/update-motd.d
+chmod +x /etc/update-motd.d/*
 ```
 
-#### 3. do a few things to make motd dynamic
-sudo 
+#### 3. maks sure that ssh does not show motd
+```
+sudo editor /etc/ssh/sshd_config
+```
+Change the following
+```
+PrintMotd no
+PrintLastLog yes
+
+#Banner /etc/issue
+```
+
+Restart sshd
+```
+sudo systemctl restart sshd
+```
+
+#### 4. test....
+Login to your server using ssh:
+```
+ _ __   __ _ ___
+| '_ \ / _` / __|
+| | | | (_| \__ \
+|_| |_|\__,_|___/
 
 
-Working in progress.
+Welcome to Debian GNU/Linux 11 (bullseye) (5.10.0-19-amd64)
+
+System information as of: Sun Nov 13 15:51:37 CET 2022
+
+System load:	0.47		IP Address:	10.10.42.10
+Memory usage:	26.7		System uptime:	5:14 hours
+Usage on /:	19%		Swap usage:	0.0%
+Local Users:	1		Processes:	333
+
+Linux nasnode 5.10.0-19-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64
+0 updates to install.
+0 are security updates.
+
+Last login: Sun Nov 13 14:46:56 2022 from ff80::1
+```
+It should produce something like this, but if it does not then figure out why ... 
