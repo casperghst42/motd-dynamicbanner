@@ -64,11 +64,16 @@ Get the files:
 cd <>
 git clone https://github.com/casperghst42/motd-dynamicbanner.git
 cd motd-dynamicbanner/files
-cp * /etc/update-motd.d
-chmod +x /etc/update-motd.d/*
+sudo cp * /etc/update-motd.d
+sudo chmod +x /etc/update-motd.d/*
+```
+#### 3. make sure that the orignal motd is not shown
+```
+sudo mv /etc/motd /etc/motd.orig
 ```
 
-#### 3. maks sure that ssh does not show motd
+
+#### 4. maks sure that ssh does not show motd
 ```
 sudo editor /etc/ssh/sshd_config
 ```
@@ -85,7 +90,7 @@ Restart sshd
 sudo systemctl restart sshd
 ```
 
-#### 4. test....
+#### 5. test....
 Login to your server using ssh:
 ```
  _ __   __ _ ___
