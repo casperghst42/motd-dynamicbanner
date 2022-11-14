@@ -67,6 +67,14 @@ cd motd-dynamicbanner/files
 sudo cp * /etc/update-motd.d
 sudo chmod +x /etc/update-motd.d/*
 ```
+##### 2.1 two different sysinfo's
+There are two different sysinfo's:
+10-sysinfo
+10-sysinfo-debian
+
+Switch between thenm by adding or removing the executable flag.
+
+
 #### 3. make sure that the orignal motd is not shown
 ```
 sudo mv /etc/motd /etc/motd.orig
