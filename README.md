@@ -5,6 +5,7 @@ Feel free to clone and improve. Especially the 10-sysinfo could use some love.
 Most of this comes form:
 - https://chrisrmiller.com/ubuntu-dynamic-motd-on-debian-9/
 - https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html
+- https://github.com/alct/landscape-sysinfo-centos/blob/master/landscape-sysinfo-centos
 
 With small bits of changes to get it to work on Debian 11 (Buster), and with python3.
 

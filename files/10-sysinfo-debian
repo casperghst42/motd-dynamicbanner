@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-# landscape-sysinfo-centos
-# https://github.com/alct/landscape-sysinfo-centos
+# 10-sysinfo-debian 
+# https://github.com/casperghst42/motd-dynamicbanner/blob/main/files/10-sysinfo-debian
+#
+# Forked from 
+#     landscape-sysinfo-centos
+#     https://github.com/alct/landscape-sysinfo-centos
 
 add_leading_zero_if_missing() {
   local value="${1}"
